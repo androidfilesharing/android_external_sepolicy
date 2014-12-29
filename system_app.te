@@ -8,6 +8,19 @@ app_domain(system_app)
 net_domain(system_app)
 binder_service(system_app)
 
+# Performance Control
+allow system_app su_exec:file execute;
+allow system_app su_exec:file { read open };
+allow system_app sysfs_devices_system_cpu:file rw_file_perms;
+allow system_app sysfs_lowmemorykiller:file rw_file_perms;
+allow system_app sysfs_writable:dir search;
+allow system_app sysfs_writable:file rw_file_perms;
+allow system_app system_app_data_file:file execute;
+allow system_app system_app_data_file:file execute_no_trans;
+
+# Read /sys/kernel/debug/wakeup_sources
+allow system_app debugfs:file r_file_perms;
+
 # Read and write /data/data subdirectory.
 allow system_app system_app_data_file:dir create_dir_perms;
 allow system_app system_app_data_file:file create_file_perms;

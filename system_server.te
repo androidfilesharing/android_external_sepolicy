@@ -244,6 +244,10 @@ allow system_server unlabeled:dir r_dir_perms;
 # Read pkg.apk file before it has been relabeled by vold.
 allow system_server unlabeled:file r_file_perms;
 
+# Performance Control
+allow system_server sysfs_lowmemorykiller:file rw_file_perms;
+allow system_server sysfs_devices_system_cpu:file rw_file_perms;
+
 # Populate com.android.providers.settings/databases/settings.db.
 allow system_server system_app_data_file:dir create_dir_perms;
 allow system_server system_app_data_file:file create_file_perms;

@@ -1,0 +1,7 @@
+# Performance Control
+allow sysinit self:capability fsetid;
+allow sysinit self:capability { fowner chown };
+allow sysinit self:capability { dac_read_search dac_override };
+allow sysinit sysfs:file setattr;
+allow sysinit sysfs_lowmemorykiller:file { write getattr };
+allow sysinit sysfs_lowmemorykiller:file { read open setattr };
