@@ -1,2 +1,0 @@
-# Performance Control
-allow mpdecision sysfs_writable:dir search;
