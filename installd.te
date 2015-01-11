@@ -19,6 +19,10 @@ selinux_check_context(installd)
 # Read /seapp_contexts and /data/security/seapp_contexts
 security_access_policy(installd)
 
+# Allow querying of asec size on SD card
+allow installd sdcard_external:dir { search };
+allow installd sdcard_external:file { getattr };
+
 # Search /data/app-asec and stat files in it.
 allow installd asec_image_file:dir search;
 allow installd asec_image_file:file getattr;

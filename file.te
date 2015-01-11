@@ -126,6 +126,10 @@ type security_file, file_type;
 # device policy
 type bluetooth_efs_file, file_type;
 
+# Performance Control
+type sysfs_devices_system_ksm, fs_type, sysfs_type;
+type sysfs_devices_system_zram, fs_type, sysfs_type;
+
 # Socket types
 type adbd_socket, file_type;
 type bluetooth_socket, file_type;
